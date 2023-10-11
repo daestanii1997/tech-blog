@@ -1,5 +1,5 @@
 const {Model, DataTypes}=require('sequelize');
-const sequelize = require('../config/config');
+const sequelize = require('../config/connection');
 
 class Post extends Model  {
 
@@ -23,7 +23,7 @@ Post.init(
             }
         },
         post_content:{
-            type:DataTypes.STING,
+            type:DataTypes.STRING,
             allowNull: false,
             validate:{
                 notEmpty: true,
