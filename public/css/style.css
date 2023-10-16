@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#main-header {
+    background-color: rgb(46, 17, 15);
+    color: white;
+    height: 100px;
+}
+
+a {
+    margin-left: 25px;
+}
+
+#main-header-title {
+    background-color: white;
+    border-radius: 7px;
+    max-width: 215px;
+    color: rgb(46, 17, 15);
+    text-align: center;
+    box-shadow: 5px 5px rgb(139, 137, 137);
+    margin-left: 50px;
+}

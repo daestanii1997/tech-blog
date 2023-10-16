@@ -25,12 +25,13 @@ router.post('/login', async (req, res) => {
         }
 
         req.session.save(() => {
-            req.session.user_id = userData.isSoftDeleted;
             req.session.logged_in = true;
+            req.session.user_id = userData.id;
+            req.session.username = req.body.username
             res.json({ user: userData, message: 'Login successful!'});
         });
     } catch (err) {
-        res.status(400).json(err);
+        res.status(500).json(err);
     }
 });
 

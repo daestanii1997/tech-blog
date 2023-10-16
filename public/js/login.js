@@ -9,19 +9,20 @@ const loginFormHandler = async (event) => {
       // Send a POST request to the API endpoint
       const response = await fetch('/api/login', {
         method: 'POST',
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ 
+          username: username, 
+          password: password 
+        }),
         headers: { 'Content-Type': 'application/json' },
       });
   
-      if (response.ok) {
+      // if (response.ok) {
         // If successful, redirect the browser to the profile page
         document.location.replace('/homepage');
-      } else {
-        alert(response.statusText);
-      }
+      // } else {
+      //   alert(response.statusText);
+      // }
     }
   };
 
-  document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+  document.querySelector('#login-form').addEventListener('submit', loginFormHandler);

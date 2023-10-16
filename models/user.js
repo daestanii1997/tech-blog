@@ -37,7 +37,6 @@ User.init(
         },
          date_signed_up: {
             type: DataTypes.DATE,
-            // allowNull: false,
             defaultValue: DataTypes.NOW
         }
     },
