@@ -2,7 +2,8 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 // New User
-router.post('/signup', async (req, res) => {
+router.post('/', async (req, res) => {
+    console.log("hit")
     try {
         const userData = await User.create({
             username: req.body.username,
@@ -21,10 +22,5 @@ router.post('/signup', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-// get sign up page/home depending on login status
-router.get('/signup', async (req, res) => {
-    (req.session.logged_in) ? res.redirect('home') : res.render('signup');
-  });
 
 module.exports = router;

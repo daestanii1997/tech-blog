@@ -21,4 +21,10 @@ a {
     text-align: center;
     box-shadow: 5px 5px rgb(139, 137, 137);
     margin-left: 50px;
+    margin-top: 20px;
+}
+
+a {
+    color: white; 
+    text-decoration: none;
 }
