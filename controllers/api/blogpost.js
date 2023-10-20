@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Post, Comment} = require('../../models');
 
+// This route works!!
 router.post('/post', async (req, res) => {
     try {
         const {post_title, post_content} = req.body;
@@ -17,6 +18,7 @@ router.post('/post', async (req, res) => {
     }
 });
 
+// This route works!!
 router.post('/comment', async (req, res) => {
     try {
         const { comment_content, parent_post} = req.body;

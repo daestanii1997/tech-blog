@@ -1,13 +1,14 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
-  
     // Collect values from the login form
-    const username = document.querySelector('#login-username').value
-    // .trim();
-    const password = document.querySelector('#login-password').value
-    // .trim();
-  
+    // These are coming back as undefined, also tried queryselector with same result
+    const username = document.querySelector("#login-username").value;
+    const password = document.querySelector("#login-password").value;
+    
+    console.log(username, password)
+
     if (username && password) {
+      console.log('hit')
       // Send a POST request to the API endpoint
       const response = await fetch('/api/login', {
         method: 'POST',
@@ -16,8 +17,7 @@ const loginFormHandler = async (event) => {
       });
       
       if (response.ok) {
-        console.log(username, password)
-        document.location.replace('/blogpost');
+        document.location.redirect('/blogpost');
       } else {
         alert(response.statusText);
       }

@@ -1,5 +1,5 @@
 <h1>This is the homepage</h1>
-{{#each Post}}
+{{#each Post as | Post |}}
 <section class="post-container">
     <div class="post-title">{{this.post_title}}</div>
     <p class="post-content">{{this.post_content}}</p>
