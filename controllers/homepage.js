@@ -45,9 +45,31 @@ router.get('/login', async (req, res) => {
 
 // get route for blogpost page
 // TODO: need to render posts by current user
-router.get('/blogpost', async (req, res) => {
-    res.render('blogpost');
-})
+router.get('/blogpost', withAuth, async (req, res) => {
+    res.render('dashboard');
+});
+
+router.get('/post/:id', async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+            ],
+        });
+        const post = postData.get({plain: true});
+
+        res.render('post', {
+            ...post,
+            logged_in: req.session.logged_in
+        });
+        
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
 
 // catch all route
 router.get('*', (req, res) => {

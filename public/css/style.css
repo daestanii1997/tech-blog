@@ -33,15 +33,21 @@ a {
     border: 2px solid rgb(46, 17, 15);
 }
 
+.page-title{
+    color: rgb(46, 17, 15);
+    text-align: center;
+}
+
 .post-container{
     border: 2px solid rgb(46, 17, 15);
     margin-top: 10px;
-    max-width: 800px;
+    width: 50%;
+    margin: auto;
 }
 
 .post-title{
-    border-bottom: 2px solid rgb(46, 17, 15);
-    padding: 10px;
+    color: rgb(46, 17, 15);
+    font-size: larger;
 }
 
 .post-content{
@@ -49,5 +55,6 @@ a {
 }
 
 .post-information{
-    border-bottom: 2px solid rgb(46, 17, 15);
+    border-top: 2px solid rgb(46, 17, 15);
+    padding: 5px;
 }

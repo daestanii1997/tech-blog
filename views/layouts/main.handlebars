@@ -11,11 +11,11 @@
     <header id="main-header">
         <nav>
             <a href="/homepage">Home</a>
-            {{!-- {{#if logged_in}} --}}
             <a href="/blogpost">Dashboard</a>
+            {{!-- {{#if req.session.logged_in}} --}}
+            <button id="logout">Logout</button>
             {{!-- {{else}} --}}
             <a href="/login">Login</a>
-            <button id="logout">Logout</button>
             {{!-- {{/if}} --}}
         </nav>
         <h1 id="main-header-title">The Tech Blog!</h1>

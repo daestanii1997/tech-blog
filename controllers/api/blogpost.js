@@ -19,9 +19,35 @@ router.post('/post', async (req, res) => {
     }
 });
 
-// TODO: need to write delete route for posts (only accessed on blogpost page)
+// need to write delete route for posts (only accessed on blogpost page)
+// This route works, need to implement user_id line when logged in.
+router.delete('/:id', async (req, res) => {
+    try {
+        const postData = await Post.destroy({
+            where: {
+                id: req.params.id,
+                // user_id: req.session.user_id,
+            },
+        });
 
+        if (!postData) {
+            res.status(404).json({ message: 'No post found!'});
+            return;
+        }
+        res.status(200).json(postData);
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err);
+    }
+})
 // TODO: need to write put route for updating posts (only accessed on blogpost page)
+
+// router.put('/:id', async (req, res) => {
+//     try {
+
+//     }
+// })
+
 
 // Post route for new comments
 // This route works!!
@@ -42,5 +68,24 @@ router.post('/comment', async (req, res) => {
 });
 
 // TODO: need to write delete route for comments
+// sql error referring to the parent_post field???? something about the foreign key
+router.delete('/comment/:id', async (req, res) => {
+    try {
+        const commentData = await Comment.destroy({
+            where: {
+                id: req.params.id,
+                // user_id: req.session.user_id,
+            },
+        });
+
+        if (!commentData) {
+            res.status(404).json({ message: 'No comment found!'});
+            return;
+        }
+        res.status(200).json(commentData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
