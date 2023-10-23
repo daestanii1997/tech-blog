@@ -1,7 +1,8 @@
 <h1>This is the homepage</h1>
-{{#each Post as | Post |}}
+{{#each posts as |post|}}
 <section class="post-container">
-    <div class="post-title">{{this.post_title}}</div>
-    <p class="post-content">{{this.post_content}}</p>
+    <div class="post-title">{{post.post_title}}</div>
+    <p class="post-information">Created on: {{post.created_on}}</p>
+    <p class="post-content">{{post.post_content}}</p>
 </section>
 {{/each}}

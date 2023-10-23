@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// Post route for login information
 // This works!!
+// TODO: need to write password validation function
 router.post('/', async (req, res) => {
     try {
         const userData = await User.findOne({ 
@@ -16,6 +18,9 @@ router.post('/', async (req, res) => {
             return;
         }
         
+        // TODO: this was giving an error and wouldn't allow user to login
+        // error message is check password is not a function
+
         // const validPassword = await userData.checkPassword(req.body.password);
         
         // if (!validPassword) {

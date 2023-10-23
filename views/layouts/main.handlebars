@@ -11,12 +11,12 @@
     <header id="main-header">
         <nav>
             <a href="/homepage">Home</a>
-            {{#if logged_in}}
+            {{!-- {{#if logged_in}} --}}
             <a href="/blogpost">Dashboard</a>
-            <button id="logout">Logout</button>
-            {{else}}
+            {{!-- {{else}} --}}
             <a href="/login">Login</a>
-            {{/if}}
+            <button id="logout">Logout</button>
+            {{!-- {{/if}} --}}
         </nav>
         <h1 id="main-header-title">The Tech Blog!</h1>
     </header>
@@ -26,10 +26,10 @@
 
     <script src="/js/login.js"></script>
     <script src="/js/signup.js"></script>
-    {{#if logged_in}}
-    
-    <script src="/js/logout.js"></script>
-    {{/if}}
+
+    {{!-- {{#if logged_in}} --}}
+        <script src="/js/logout.js"></script>
+    {{!-- {{/if}} --}}
     
 </body>
 </html>

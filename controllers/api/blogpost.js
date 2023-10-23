@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Post, Comment} = require('../../models');
 
+// Post route for new posts
 // This route works!!
 router.post('/post', async (req, res) => {
     try {
@@ -18,6 +19,11 @@ router.post('/post', async (req, res) => {
     }
 });
 
+// TODO: need to write delete route for posts (only accessed on blogpost page)
+
+// TODO: need to write put route for updating posts (only accessed on blogpost page)
+
+// Post route for new comments
 // This route works!!
 router.post('/comment', async (req, res) => {
     try {
@@ -34,5 +40,7 @@ router.post('/comment', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+// TODO: need to write delete route for comments
 
 module.exports = router;

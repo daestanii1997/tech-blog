@@ -9,7 +9,7 @@
     height: 100px;
 }
 
-a {
+a, #logout {
     margin-left: 25px;
 }
 
@@ -31,4 +31,23 @@ a {
 
 #login-username{
     border: 2px solid rgb(46, 17, 15);
+}
+
+.post-container{
+    border: 2px solid rgb(46, 17, 15);
+    margin-top: 10px;
+    max-width: 800px;
+}
+
+.post-title{
+    border-bottom: 2px solid rgb(46, 17, 15);
+    padding: 10px;
+}
+
+.post-content{
+    padding: 10px;
+}
+
+.post-information{
+    border-bottom: 2px solid rgb(46, 17, 15);
 }
