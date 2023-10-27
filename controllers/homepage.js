@@ -26,6 +26,7 @@ router.get('/', async (req, res) => {
         const posts = postData.map((post) => post.get({ plain: true }));
 
         res.render('homepage', {
+            logged_in: req.session.logged_in,
             posts,
         });
     } catch (err) {
@@ -43,13 +44,15 @@ router.get('/login', async (req, res) => {
     res.render('login')
 })
 
-// get route for blogpost page
+// get route for dashboard page
 // TODO: need to render posts by current user
 router.get('/blogpost', withAuth, async (req, res) => {
-    res.render('dashboard');
+
+    res.render('dashboard', {logged_in: req.session.logged_in});
 });
 
 router.get('/post/:id', async (req, res) => {
+    console.log('hit');
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
@@ -61,7 +64,7 @@ router.get('/post/:id', async (req, res) => {
         });
         const post = postData.get({plain: true});
 
-        res.render('post', {
+        res.render('post_detail', {
             ...post,
             logged_in: req.session.logged_in
         });

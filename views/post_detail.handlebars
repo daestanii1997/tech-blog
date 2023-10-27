@@ -1,0 +1,12 @@
+<div>
+    <h2>{{post_title}}</h2>
+    <p>{{post_content}}</p>
+    <p>Posted by user: {{user_id}}</p>
+    <p> On {{created_on}}</p>
+</div>
+{{#if logged_in}}
+<form id="comment-form">
+    <input id="comment-input">
+    <button type="submit" id="add-comment-button">Add Comment</button>
+</form>
+{{/if}}
