@@ -13,6 +13,15 @@ a, #logout {
     margin-left: 25px;
 }
 
+#logout {
+    width: 70px;
+}
+
+#logout:hover{
+    background-color: white;
+    color: rgb(46, 17, 15);
+}
+
 #main-header-title {
     background-color: white;
     border-radius: 7px;
@@ -29,7 +38,11 @@ a {
     text-decoration: none;
 }
 
-#login-username{
+#login-username, #signup-username, #login-password, #signup-password{
+    margin: 7px;
+}
+
+.login-container, .signup-container{
     border: 2px solid rgb(46, 17, 15);
 }
 
@@ -38,23 +51,64 @@ a {
     text-align: center;
 }
 
-.post-container{
-    border: 2px solid rgb(46, 17, 15);
+.post-container, #login-form, .signup-form{
     margin-top: 10px;
     width: 50%;
     margin: auto;
 }
 
-.post-title{
-    color: rgb(46, 17, 15);
+.post-title, h2{
+    background-color: rgb(46, 17, 15);
+    color: white;
     font-size: larger;
+    margin-top: 10px;
+    padding-left: 5px;
 }
 
 .post-content{
-    padding: 10px;
+    padding: 7px;
+    border-left: 2px solid rgb(46, 17, 15);
+    border-right: 2px solid rgb(46, 17, 15);
 }
 
 .post-information{
-    border-top: 2px solid rgb(46, 17, 15);
+    border: 2px solid rgb(46, 17, 15);
     padding: 5px;
+}
+
+#comment-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#comment-input{
+    width: 250px;
+}
+
+button{
+    color: white;
+    background-color: rgb(46, 17, 15);
+    width: 125px;
+    margin: 5px;
+}
+
+#new-post-title{
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+}
+
+#new-post-content{
+    display: block;
+    width: 75%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#new-post{
+    display: block;
+    margin: auto;
+    margin-top: 5px;
 }

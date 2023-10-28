@@ -1,15 +1,13 @@
-// TODO: write front end post logic
+// front end post logic
 const newPostFormHandler = async (event) => {
     event.preventDefault();
 
-    // get remaining required fields
     const postTitle = document.querySelector("#new-post-title").value;
     const postContent = document.querySelector("#new-post-content").value;
 
     if (postTitle && postContent) {
         const response = await fetch('/api/blogpost/post', {
             method: 'POST',
-            // get remaining required fields
             body: JSON.stringify({ 
                 post_title: postTitle, 
                 post_content: postContent 
@@ -27,7 +25,7 @@ const newPostFormHandler = async (event) => {
 
 document.querySelector("#new-post-form").addEventListener("submit", newPostFormHandler);
 
-// New comment event handler
+// TODO: New comment event handler
 const newCommentFormHandler = async (event) => {
     // get remaining required fields
     const newComment = document.querySelector("#comment-input").value;
@@ -36,7 +34,9 @@ const newCommentFormHandler = async (event) => {
         const response = await fetch('/api/comment', {
             method: 'POST',
             // get remaining required fields
-            body: JSON.stringify({newComment}),
+            body: JSON.stringify({
+                newComment
+            }),
             headers: { 'Content-Type': 'application/json'},
         });
 

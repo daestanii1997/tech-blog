@@ -52,7 +52,6 @@ router.get('/blogpost', withAuth, async (req, res) => {
 });
 
 router.get('/post/:id', async (req, res) => {
-    console.log('hit');
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [

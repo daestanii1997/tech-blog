@@ -50,7 +50,7 @@ router.delete('/:id', async (req, res) => {
 
 
 // Post route for new comments
-// This route works!!
+// Test route
 router.post('/comment', async (req, res) => {
     try {
         const { comment_content, parent_post} = req.body;

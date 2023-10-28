@@ -1,8 +1,17 @@
-<div>
+<div class="post-container">
+    <div class="post-title">
     <h2>{{post_title}}</h2>
-    <p>{{post_content}}</p>
+    </div>
+    <p class="post-content">{{post_content}}</p>
+    <div class="post-information">
     <p>Posted by user: {{user_id}}</p>
     <p> On {{created_on}}</p>
+    </div>
+</div>
+<div>
+    <p>
+    {{comment.comment_content}}
+    </p>
 </div>
 {{#if logged_in}}
 <form id="comment-form">
