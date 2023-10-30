@@ -1,5 +1,18 @@
 <h1 class="page-title">Dashboard</h1>
 
+{{#each posts as |post|}}
+<section class="post-container">
+    <div class="post-title">
+    <a href="/post/{{post.id}}">{{post.post_title}}</a>
+    </div>
+    <p class="post-information">Created on: {{post.created_on}}</p>
+    <section class="post-information">
+        <button id="edit-post" type="submit">Edit Post</button>
+        <button id="delete-post" type="submit">Delete Post</button>
+    </section>
+</section>
+{{/each}}
+
 <form id="new-post-form">
     <div>
     <input id="new-post-title" placeholder="Your Title"> 

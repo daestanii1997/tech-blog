@@ -17,6 +17,7 @@ const newPostFormHandler = async (event) => {
 
         if (response.ok) {
             console.log(postTitle, postContent);
+            return;
         } else {
             alert(response.statusText);
         }
@@ -24,6 +25,26 @@ const newPostFormHandler = async (event) => {
 };
 
 document.querySelector("#new-post-form").addEventListener("submit", newPostFormHandler);
+
+// Delete post event handler
+const deletePost = async (event) => {
+    event.preventDefault();
+
+    const response = await fetch('/api/blogpost/:id', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json'}
+    });
+
+    if (response.ok) {
+        console.log('post has been deleted');
+        document.location.replace('/homepage')
+    } else {
+        alert(response.statusText);
+    }
+
+}
+
+document.querySelector("#delete-post").addEventListener("submit", deletePost)
 
 // TODO: New comment event handler
 const newCommentFormHandler = async (event) => {
