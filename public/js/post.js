@@ -52,7 +52,7 @@ const newCommentFormHandler = async (event) => {
     const newComment = document.querySelector("#comment-input").value;
 
     if (newComment) {
-        const response = await fetch('/api/comment', {
+        const response = await fetch('/api/blogpost/:id/comment', {
             method: 'POST',
             // get remaining required fields
             body: JSON.stringify({
@@ -63,6 +63,7 @@ const newCommentFormHandler = async (event) => {
 
         if (response.ok) {
             console.log(newComment);
+            return
         } else {
             alert(response.statusText);
         }

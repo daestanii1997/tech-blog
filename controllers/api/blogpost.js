@@ -51,9 +51,10 @@ router.delete('/:id', async (req, res) => {
 
 // Post route for new comments
 // Test route
-router.post('/comment', async (req, res) => {
+router.post('/:id/comment', async (req, res) => {
     try {
-        const { comment_content, parent_post} = req.body;
+        const comment_content = req.body;
+        const parent_post = req.params.id
         const user_id = req.session.user_id;
         const newComment = await Comment.create({
             comment_content: comment_content,
