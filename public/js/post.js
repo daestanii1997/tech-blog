@@ -16,8 +16,7 @@ const newPostFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            console.log(postTitle, postContent);
-            return;
+            document.location.replace('/homepage');
         } else {
             alert(response.statusText);
         }
@@ -27,24 +26,23 @@ const newPostFormHandler = async (event) => {
 document.querySelector("#new-post-form").addEventListener("submit", newPostFormHandler);
 
 // Delete post event handler
-const deletePost = async (event) => {
-    event.preventDefault();
+document.querySelector(".delete-post").addEventListener("click", function(){
+    let id =  this.getAttribute("data-id");
 
-    const response = await fetch('/api/blogpost/:id', {
+    const response = fetch(`/api/blogpost/${id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json'}
     });
 
-    if (response.ok) {
-        console.log('post has been deleted');
-        document.location.replace('/homepage')
-    } else {
+    if (response) {
+        document.location.replace('/homepage');
+    } 
+    else {
         alert(response.statusText);
     }
 
-}
-
-document.querySelector("#delete-post").addEventListener("submit", deletePost)
+    return;
+})
 
 // TODO: New comment event handler
 const newCommentFormHandler = async (event) => {
@@ -70,4 +68,4 @@ const newCommentFormHandler = async (event) => {
     }
 }
 
-document.querySelector("#comment-form").addEventListener("submit", newCommentFormHandler);
+//document.querySelector("#comment-form").addEventListener("submit", newCommentFormHandler);

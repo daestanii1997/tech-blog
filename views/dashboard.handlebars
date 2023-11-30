@@ -8,7 +8,7 @@
     <p class="post-information">Created on: {{post.created_on}}</p>
     <section class="post-information">
         <button id="edit-post" type="submit">Edit Post</button>
-        <button id="delete-post" type="submit">Delete Post</button>
+        <button class="delete-post" data-id={{post.id}} type="submit">Delete Post</button>
     </section>
 </section>
 {{/each}}

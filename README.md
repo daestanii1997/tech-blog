@@ -10,3 +10,4 @@ The required package installations are:
 
 ## Usage
 https://github.com/daestanii1997/tech-blog
+https://tech-blog-37-4f3d8e765b41.herokuapp.com/
