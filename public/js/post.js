@@ -15,10 +15,8 @@ const newPostFormHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if (response.ok) {
+        if (response) {
             document.location.replace('/homepage');
-        } else {
-            alert(response.statusText);
         }
     }
 };
@@ -37,9 +35,6 @@ document.querySelector(".delete-post").addEventListener("click", function(){
     if (response) {
         document.location.replace('/homepage');
     } 
-    else {
-        alert(response.statusText);
-    }
 
     return;
 })
@@ -62,8 +57,6 @@ const newCommentFormHandler = async (event) => {
         if (response.ok) {
             console.log(newComment);
             return
-        } else {
-            alert(response.statusText);
         }
     }
 }

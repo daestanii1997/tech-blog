@@ -12,11 +12,9 @@ const signupFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
   
-      if (response.ok) {
+      if (response) {
         document.location.replace('/blogpost');
-      } else {
-        alert(response.statusText);
-      }
+      } 
     }
   };
 
